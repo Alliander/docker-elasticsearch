@@ -28,6 +28,14 @@ discovery:
 xpack:
   security:
     enabled: ${XPACK_SECURITY_ENABLED}
+  graph:
+    enabled: false
+  ml:
+    enabled: false
+  reporting: 
+    enabled: false
+  watcher:
+    enabled: false
 
 
 # ======================== Elasticsearch Configuration =========================
