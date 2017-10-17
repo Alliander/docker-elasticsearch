@@ -45,18 +45,20 @@ RUN apk add --no-cache -t .build-deps wget gnupg openssl \
 RUN /elasticsearch/bin/elasticsearch-plugin install --batch repository-s3 \
   && /elasticsearch/bin/elasticsearch-plugin install --batch x-pack
 
-USER elasticsearch
+
 
 ENV PATH /elasticsearch/bin:$PATH
-
-WORKDIR /elasticsearch
 
 # Copy configuration
 COPY config /elasticsearch/config
 
 # Copy run script
-COPY run.sh /
-RUN chmod 644 run.sh
+COPY run.sh /elasticsearch
+
+RUN chmod 644 /elasticsearch/run.sh
+RUN chown -R elasticsearch:elasticsearch /elasticsearch
+
+USER elasticsearch
 
 # Set environment variables defaults
 ENV ES_JAVA_OPTS "-Xms512m -Xmx512m"
@@ -79,4 +81,4 @@ ENV XPACK_SECURITY_ENABLED false
 # Volume for Elasticsearch data
 VOLUME ["/data"]
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/elasticsearch/run.sh"]
