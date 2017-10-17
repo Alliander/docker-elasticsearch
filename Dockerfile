@@ -56,6 +56,7 @@ COPY config /elasticsearch/config
 
 # Copy run script
 COPY run.sh /
+RUN chmod 644 run.sh
 
 # Set environment variables defaults
 ENV ES_JAVA_OPTS "-Xms512m -Xmx512m"
