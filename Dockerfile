@@ -55,7 +55,7 @@ COPY config /elasticsearch/config
 # Copy run script
 COPY run.sh /elasticsearch
 
-RUN chmod 644 /elasticsearch/run.sh
+RUN chmod 755 /elasticsearch/run.sh
 RUN chown -R elasticsearch:elasticsearch /elasticsearch
 
 USER elasticsearch
