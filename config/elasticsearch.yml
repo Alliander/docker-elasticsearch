@@ -32,6 +32,11 @@ xpack:
     enabled: false
   watcher:
     enabled: false
+  monitoring:
+    exporters:
+      id1:
+        type: http
+        host: ["${XPACK_MONITORING_EXPORTERS_HOST}"]
 
 
 # ======================== Elasticsearch Configuration =========================
