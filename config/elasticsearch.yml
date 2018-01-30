@@ -38,7 +38,7 @@ xpack:
     exporters:
       id1:
         type: http
-        host: ["${XPACK_MONITORING_EXPORTERS_HOST}"]
+        host: ${XPACK_MONITORING_EXPORTERS_HOST}
 
 
 # ======================== Elasticsearch Configuration =========================
