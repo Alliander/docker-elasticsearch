@@ -1,4 +1,4 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.3
+FROM docker.elastic.co/elasticsearch/elasticsearch:6.1.2
 
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch repository-s3
 
