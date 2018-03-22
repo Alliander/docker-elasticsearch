@@ -22,6 +22,10 @@ http:
   enabled: ${HTTP_ENABLED}
   compression: true
 
+transport:
+  tcp:
+    compress: true
+  
 discovery:
   zen:
     ping.unicast.hosts: ${DISCOVERY_HOSTS}
