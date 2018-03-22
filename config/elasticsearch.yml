@@ -21,10 +21,6 @@ bootstrap:
 http:
   enabled: ${HTTP_ENABLED}
   compression: true
-
-transport:
-  tcp:
-    compress: true
   
 discovery:
   zen:
